@@ -15,4 +15,5 @@ package frc.robot;
 public final class Constants {
 
     public final int testMode = 0;
+    public static final double WHEEL_DIAMETER = 5.84375;
 }
