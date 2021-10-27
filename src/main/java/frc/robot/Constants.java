@@ -16,4 +16,6 @@ public final class Constants {
 
     public final int testMode = 0;
     public static final double WHEEL_DIAMETER = 5.84375;
+    public final int motorControllerID = 1;
+
 }
