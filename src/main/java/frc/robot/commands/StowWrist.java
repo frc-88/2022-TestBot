@@ -5,37 +5,28 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.subsystems.Drive;
 
-public class DriveTank extends CommandBase {
-  /** Creates a new DriveTank. */
-  private int m_counter;
-
-  public DriveTank(Drive drive) {
-    addRequirements(drive);
+public class StowWrist extends CommandBase {
+  /** Creates a new StowWrist. */
+  public StowWrist() {
+    // Use addRequirements() here to declare subsystem dependencies.
   }
 
   // Called when the command is initially scheduled.
   @Override
-  public void initialize() {
-    m_counter = 0;
-  }
+  public void initialize() {}
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {
-    m_counter++;
-  }
+  public void execute() {}
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {
-    m_counter = 9999;
-  }
+  public void end(boolean interrupted) {}
 
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    return m_counter > 10;
+    return false;
   }
 }
