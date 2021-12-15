@@ -33,7 +33,7 @@ public class RobotContainer {
   public RobotContainer() {
     // Configure the button bindings
     configureButtonBindings();
-    SmartDashboard.putData("TestCommand", m_nixTestingCommand);
+    addSmartDashboardCommands();
   }
 
   /**
@@ -43,7 +43,11 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
+  }
+
+  private void addSmartDashboardCommands() {
     SmartDashboard.putData("SimpleTank",m_simpleTankCommand);
+    SmartDashboard.putData("TestCommand", m_nixTestingCommand);
   }
 
   /**
