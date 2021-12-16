@@ -26,7 +26,7 @@ public class RobotContainer {
   private final Drive m_drive = new Drive();
 
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
-  private final SimpleTankTrapezoid m_simpleTankCommand = new SimpleTankTrapezoid();
+  private final SimpleTankTrapezoid m_simpleTankCommand = new SimpleTankTrapezoid(m_drive, 10.0);
   private final DriveTank m_nixTestingCommand = new DriveTank(m_drive);
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */

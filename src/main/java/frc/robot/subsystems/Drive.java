@@ -24,6 +24,10 @@ public class Drive extends SubsystemBase {
     m_right.set(TalonFXControlMode.PercentOutput, right);
   }
 
+  public double getAveragePosition() {
+    return ( m_left.getSelectedSensorPosition() + m_right.getSelectedSensorPosition() ) / 2.0;
+  }
+
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
