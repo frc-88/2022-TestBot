@@ -7,8 +7,9 @@ package frc.robot;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.robot.commands.DriveTank;
 import frc.robot.commands.ExampleCommand;
+import frc.robot.commands.SimpleTankTrapezoid;
+import frc.robot.commands.DriveTank;
 import frc.robot.subsystems.Drive;
 import frc.robot.subsystems.ExampleSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -25,13 +26,14 @@ public class RobotContainer {
   private final Drive m_drive = new Drive();
 
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
+  private final SimpleTankTrapezoid m_simpleTankCommand = new SimpleTankTrapezoid(m_drive, 10.0);
   private final DriveTank m_nixTestingCommand = new DriveTank(m_drive);
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the button bindings
     configureButtonBindings();
-    SmartDashboard.putData("TestCommand", m_nixTestingCommand);
+    addSmartDashboardCommands();
   }
 
   /**
@@ -40,7 +42,13 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj.Joystick} or {@link XboxController}), and then passing it to a {@link
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
-  private void configureButtonBindings() {}
+  private void configureButtonBindings() {
+  }
+
+  private void addSmartDashboardCommands() {
+    SmartDashboard.putData("SimpleTank",m_simpleTankCommand);
+    SmartDashboard.putData("TestCommand", m_nixTestingCommand);
+  }
 
   /**
    * Use this to pass the autonomous command to the main {@link Robot} class.
